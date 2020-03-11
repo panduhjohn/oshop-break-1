@@ -20,8 +20,7 @@ const getAllCategories = require('./routes/admin/middleware/getAllCategories');
 const app = express();
 require('dotenv').config();
 
-mongoose
-  .connect(process.env.MONGODB_URI, {
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

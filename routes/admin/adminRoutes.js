@@ -1,11 +1,18 @@
 const router = require('express').Router();
 
 const categoryValidation = require('./validation/categoryValidation');
-const { addProducts } = require('./products/controllers/productControllers');
+const { addProducts } = require('./products/controllers/productControllers')
+const { createCategory, getAddCategory } = require('./categories/controllers/categoryControllers');
 
 router.get('/add-category', getAddCategory);
 router.post('/add-category', categoryValidation, createCategory);
 router.get('/add-products/:name', addProducts);
+
+
+
+module.exports = router;
+
+
 
 // router.get('/add-category', (req, res, next) => {
 //   return res.render('admin/add-category');
@@ -65,5 +72,3 @@ router.get('/add-products/:name', addProducts);
 //   return res.redirect('/api/admin/add-category');
 //   //   return res.json({ message: 'Success' });
 // });
-
-module.exports = router;
